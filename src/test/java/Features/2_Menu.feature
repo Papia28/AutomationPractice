@@ -1,4 +1,4 @@
-Feature: Test below list of scenarios
+Feature: Test Dresses Menu of Automation Practice Website
 
 Background: Website is lanunched
 Given application is launched

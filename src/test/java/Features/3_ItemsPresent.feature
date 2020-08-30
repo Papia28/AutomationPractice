@@ -1,4 +1,4 @@
-Feature: Test below list of scenarios
+Feature: Test presence of some items in Automation Practice Website
 
 Background: Website is lanunched
 Given application is launched

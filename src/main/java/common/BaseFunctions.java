@@ -10,6 +10,7 @@ public class BaseFunctions
 	public BaseFunctions()
 	{
 		try {
+			//get driver object
 			DriverFactory driverObject = DriverFactory.getDriverFactoryObject();
 			this.driver = driverObject.getDriver();
 		}

@@ -24,6 +24,7 @@ public class DriverFactory extends DriverManager
 	public void setDriver()
 	{
 		try {
+			//get browser name and set driver object accordingly
 			setBrowserDriver();
 			switch (getBrowser()) 
 			{
@@ -47,6 +48,7 @@ public class DriverFactory extends DriverManager
 	
 	public static DriverFactory getDriverFactoryObject()
 	{
+		//generate only single instance of driver for a single execution flow
 		try {
 			if (driverFactoryInstance == null)
 				driverFactoryInstance = new DriverFactory();
@@ -62,6 +64,7 @@ public class DriverFactory extends DriverManager
 	
 	public static void deleteDriverInstance() throws Throwable
 	{
+		//delete driver object once execution ends
 		try {
 			driverFactoryInstance = null;
 		}

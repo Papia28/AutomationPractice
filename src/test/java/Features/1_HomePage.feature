@@ -1,6 +1,6 @@
 #Author: Papia Nandi
 
-Feature: Test below list of scenarios
+Feature: Test Home Page of Automation Practice Website
 
 @HomePage
 Scenario: Website is launched

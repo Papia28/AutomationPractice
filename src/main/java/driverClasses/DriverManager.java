@@ -12,6 +12,7 @@ public abstract class DriverManager
 	public static void setBrowser()
 	{
 		try {
+		//read browser details from .properties file
 			ReadProperties.loadConfigData();
 		browser = ReadProperties.getBrowser();
 		}
@@ -29,6 +30,7 @@ public abstract class DriverManager
 	
 	public static void setBrowserDriver()
 	{
+		//download driver .exe file depending upon the browser
 		try {
 			setBrowser();
 			switch(browser)
