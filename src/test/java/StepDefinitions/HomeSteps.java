@@ -2,40 +2,39 @@ package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
 
-import common.BaseFunctions;
 import common.GenericFunctions;
+import driverClasses.TestContext;
 import io.cucumber.java.After;
-import io.cucumber.java.Before;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
+import pageObjects.HomePage;
 
-public class Home {
+public class HomeSteps {
+
+	private WebDriver driver = null;
+	private TestContext context = null;
+	private HomePage homePage = null;
 	
-	public BaseFunctions baseObj = null;
-	public WebDriver driver = null;
-	
-	@Before
-	public void beforeScenario() throws Throwable
-	{
+	public HomeSteps(TestContext context)
+	{		
 		try {
-			baseObj = new BaseFunctions();
-			driver = baseObj.driver;		
+			this.context = context;
+			homePage = context.getPageObjectManager().getHomePage();
+			driver = context.getWebDriver();
 			System.out.println("Success! Browser opened!");
-		}
-		catch(Throwable t)
-		{
-			t.printStackTrace();
+		} 
+		catch (Throwable e) {
+			e.printStackTrace();
 			System.out.println("Error in opening session!");
-			throw t;
 		}
-	}
+	}	
 	
 	@Given("^application is launched$")
 	public void launchApplication() throws Throwable
 	{
 		try {			
 			GenericFunctions.maximizeBrowser(driver);
-			baseObj.launchApplicationURL();	
+			homePage.launchApplicationURL();	
 			Thread.sleep(500);
 		}
 		catch(Throwable t)
@@ -66,7 +65,7 @@ public class Home {
 	public void afterScenario() throws Throwable
 	{
 		try {
-		baseObj.closeSession();
+			context.getDriverFactory().quitSession();
 		}
 		catch(Throwable t)
 		{

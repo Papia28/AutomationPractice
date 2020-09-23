@@ -13,7 +13,12 @@ public class DriverFactory extends DriverManager
 	
 	private DriverFactory()
 	{
-		setDriver();		
+		try {
+			setSession();
+		} 
+		catch (Throwable e) {
+			e.printStackTrace();
+		}		
 	}
 	
 	public WebDriver getDriver()
@@ -21,7 +26,7 @@ public class DriverFactory extends DriverManager
 		return driver;
 	}
 	
-	public void setDriver()
+	public void setSession() throws Throwable
 	{
 		try {
 			//get browser name and set driver object accordingly
@@ -38,11 +43,13 @@ public class DriverFactory extends DriverManager
 		{
 			System.out.println("Error in starting WebDriver!");
 			e.printStackTrace();
+			throw e;
 		}
 		catch(Throwable t)
 		{
 			System.out.println("Error in creating WebDriver object!");
 			t.printStackTrace();
+			throw t;
 		}
 	}
 	
@@ -62,15 +69,23 @@ public class DriverFactory extends DriverManager
 		}
 	}
 	
-	public static void deleteDriverInstance() throws Throwable
+	public void quitSession() throws Throwable
 	{
 		//delete driver object once execution ends
 		try {
-			driverFactoryInstance = null;
+			System.out.println("Closing session.");
+			driver.quit();			
 		}
 		catch(Throwable t)
 		{
+			t.printStackTrace();
 			System.out.println("Error in setting driver instance to null: deleteDriverInstance()");
+			throw t;
+		}
+		finally
+		{
+			driver = null;
+			driverFactoryInstance = null;
 		}
 	}
 

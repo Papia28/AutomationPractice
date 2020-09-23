@@ -28,7 +28,7 @@ public abstract class DriverManager
 		return browser;
 	}
 	
-	public static void setBrowserDriver()
+	public static void setBrowserDriver() throws Throwable
 	{
 		//download driver .exe file depending upon the browser
 		try {

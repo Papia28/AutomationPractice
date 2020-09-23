@@ -1,17 +1,25 @@
 package StepDefinitions;
 
-import org.openqa.selenium.WebDriver;
-
-import common.BaseFunctions;
 import common.GenericFunctions;
+import driverClasses.TestContext;
 import io.cucumber.java.en.Then;
-import pageObjects.DressesPage;
+import pageObjects.DressPage;
 
-public class ItemsPresent {
-
-	public BaseFunctions baseObj = new BaseFunctions();
-	public WebDriver driver = baseObj.driver;
-	public DressesPage dressObject = new DressesPage(driver);
+public class ItemsPresentSteps 
+{
+	private DressPage dressObject = null;
+	
+	public ItemsPresentSteps(TestContext context)
+	{
+		try {
+			dressObject = context.getPageObjectManager().getDressPage();
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error in ItemsPresentSteps.");
+		}
+	}
 
 	@Then("^user verifies \"(.*)\" is present$")
 	public void verifyDressesPresent(String dressName) throws Throwable 

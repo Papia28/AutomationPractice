@@ -1,17 +1,25 @@
 package StepDefinitions;
 
-import org.openqa.selenium.WebDriver;
-
-import common.BaseFunctions;
 import common.GenericFunctions;
+import driverClasses.TestContext;
 import io.cucumber.java.en.Then;
-import pageObjects.DressesPage;
+import pageObjects.DressPage;
 
-public class ItemsNotPresent {
+public class ItemsNotPresentSteps 
+{	
+	private DressPage dressObject = null;
 	
-	public BaseFunctions baseObj = new BaseFunctions();
-	public WebDriver driver = baseObj.driver;
-	public DressesPage dressObject = new DressesPage(driver);
+	public ItemsNotPresentSteps(TestContext context)
+	{
+		try {
+			dressObject = context.getPageObjectManager().getDressPage();
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error in ItemsNotPresentSteps.");
+		}
+	}
 
 	@Then("^user verifies \"(.*)\" is not present$")
 	public void verifyDressesNotPresent(String dressName) throws Throwable 

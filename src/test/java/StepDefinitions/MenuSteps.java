@@ -2,18 +2,30 @@ package StepDefinitions;
 
 import org.openqa.selenium.WebDriver;
 
-import common.BaseFunctions;
 import common.GenericFunctions;
+import driverClasses.TestContext;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import pageObjects.HomePage;
 
-public class Menu 
+public class MenuSteps 
 {
-	public BaseFunctions baseObj = new BaseFunctions();
-	public WebDriver driver = baseObj.driver;
-	public HomePage homeObject = new HomePage(driver);
+	private WebDriver driver = null;
+	private HomePage homeObject = null;
+	
+	public MenuSteps(TestContext context)
+	{
+		try {
+			homeObject = context.getPageObjectManager().getHomePage();
+			this.driver = context.getWebDriver();
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error in MenuSteps!");
+		}
+	}
 	
 	@When("^user goes to Dresses menu$")
 	public void dressesMenu() throws Throwable
