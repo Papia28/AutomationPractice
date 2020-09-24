@@ -1,7 +1,7 @@
 package StepDefinitions;
 
-import common.GenericFunctions;
-import driverClasses.TestContext;
+import assertions.Assertion;
+import common.TestContext;
 import io.cucumber.java.en.Then;
 import pageObjects.DressPage;
 
@@ -30,35 +30,35 @@ public class ItemsPresentSteps
 			case "Printed Dress $26.00":
 				dressObject.hoverOnPrintedDress1();
 				Thread.sleep(1000);
-				GenericFunctions.validateElementPresent(dressObject.getPrintedDress1());
+				Assertion.trueAssertion(dressObject.validatePrintedDress1Present());
 				System.out.println("Success! Dress Found!");
 				break;
 				
 			case "Printed Dress $50.99":
 				dressObject.hoverOnPrintedDress2();
 				Thread.sleep(1000);
-				GenericFunctions.validateElementPresent(dressObject.getPrintedDress2());
+				Assertion.trueAssertion(dressObject.validatePrintedDress2Present());
 				System.out.println("Success! Dress Found!");
 				break;
 				
 			case "Printed Summer Dress $28.98":
 				dressObject.hoverOnsummerDress1();
 				Thread.sleep(1000);
-				GenericFunctions.validateElementPresent(dressObject.getSummerDress1());
+				Assertion.trueAssertion(dressObject.validateSummerDress1Present());
 				System.out.println("Success! Dress Found!");
 				break;
 				
 			case "Printed Summer Dress $30.50":
 				dressObject.hoverOnsummerDress2();
 				Thread.sleep(1000);
-				GenericFunctions.validateElementPresent(dressObject.getSummerDress2());
+				Assertion.trueAssertion(dressObject.validateSummerDress2Present());
 				System.out.println("Success! Dress Found!");
 				break;
 				
 			case "Printed Chiffon Dress $16.40":
 				dressObject.hoverOnchiffonDress();
 				Thread.sleep(1000);
-				GenericFunctions.validateElementPresent(dressObject.getChiffonDress());
+				Assertion.trueAssertion(dressObject.validateChiffonDressPresent());
 				System.out.println("Success! Dress Found!");
 				break;
 			}

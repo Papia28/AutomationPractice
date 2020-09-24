@@ -53,6 +53,52 @@ public class DressPage {
 		}
 	}
 	
+	public WebElement getPrintedDress1() throws Throwable 
+	{
+		try {
+			System.out.println("Locating Printed Dress $26.00!");
+			printedDress1.getTagName();
+		return printedDress1;
+		}
+		catch(NoSuchElementException e)
+		{
+			e.printStackTrace();
+			System.out.println("Error in locating element!");
+			throw e;
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error with element!");
+			throw t;
+		}
+	}
+	
+	public boolean validatePrintedDress1Present() throws Throwable
+	{
+		int flag = 0;
+		try {
+			System.out.println("Locating Printed Dress $26.00!");
+			printedDress1.getTagName();
+		}
+		catch(NoSuchElementException e)
+		{
+			System.out.println("Failure! Element not found!");
+			flag = 1;
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error with element!");
+			throw t;
+		}
+		
+		if(flag == 1)
+			return false;
+		else
+			return true;
+	}
+	
 	public void hoverOnPrintedDress2() throws Throwable
 	{
 		try {
@@ -66,6 +112,52 @@ public class DressPage {
 			System.out.println("Error in hovering on element!");
 			throw t;
 		}
+	}
+	
+	public WebElement getPrintedDress2() throws Throwable
+	{
+		try {
+			System.out.println("Locating Printed Dress $50.99!");
+			printedDress2.getTagName();
+		return printedDress2;
+		}
+		catch(NoSuchElementException e)
+		{
+			e.printStackTrace();
+			System.out.println("Error in locating element!");
+			throw e;
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error with element!");
+			throw t;
+		}
+	}
+	
+	public boolean validatePrintedDress2Present() throws Throwable
+	{
+		int flag = 0;
+		try {
+			System.out.println("Locating Printed Dress $50.99!");
+			printedDress2.getTagName();
+		}
+		catch(NoSuchElementException e)
+		{
+			System.out.println("Failure! Element not found!");
+			flag = 1;
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error with element!");
+			throw t;
+		}
+		
+		if(flag == 1)
+			return false;
+		else
+			return true;
 	}
 	
 	public void hoverOnsummerDress1() throws Throwable
@@ -83,6 +175,52 @@ public class DressPage {
 		}
 	}
 	
+	public WebElement getSummerDress1() throws Throwable
+	{
+		try {
+			System.out.println("Locating Printed Summer Dress $28.98!");
+			summerDress1.getTagName();
+		return summerDress1;
+		}
+		catch(NoSuchElementException e)
+		{
+			e.printStackTrace();
+			System.out.println("Error in locating element!");
+			throw e;
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error with element!");
+			throw t;
+		}
+	}
+	
+	public boolean validateSummerDress1Present() throws Throwable
+	{
+		int flag = 0;
+		try {
+			System.out.println("Locating Printed Summer Dress $28.98!");
+			summerDress1.getTagName();
+		}
+		catch(NoSuchElementException e)
+		{
+			System.out.println("Failure! Element not found!");
+			flag = 1;
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error with element!");
+			throw t;
+		}
+		
+		if(flag == 1)
+			return false;
+		else
+			return true;
+	}
+	
 	public void hoverOnsummerDress2() throws Throwable
 	{
 		try {
@@ -96,6 +234,52 @@ public class DressPage {
 			System.out.println("Error in hovering on element!");
 			throw t;
 		}
+	}
+	
+	public WebElement getSummerDress2() throws Throwable
+	{
+		try {
+			System.out.println("Printed Summer Dress $30.50!");
+			summerDress2.getTagName();
+		return summerDress2;
+		}
+		catch(NoSuchElementException e)
+		{
+			e.printStackTrace();
+			System.out.println("Error in locating element!");
+			throw e;
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error with element!");
+			throw t;
+		}
+	}
+	
+	public boolean validateSummerDress2Present() throws Throwable
+	{
+		int flag = 0;
+		try {
+			System.out.println("Printed Summer Dress $30.50!");
+			summerDress2.getTagName();
+		}
+		catch(NoSuchElementException e)
+		{
+			System.out.println("Failure! Element not found!");
+			flag = 1;
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error with element!");
+			throw t;
+		}
+		
+		if(flag == 1)
+			return false;
+		else
+			return true;
 	}
 	
 	public void hoverOnchiffonDress() throws Throwable
@@ -113,90 +297,11 @@ public class DressPage {
 		}
 	}
 	
-	public WebElement getPrintedDress1() throws Throwable 
-	{
-		try {
-			System.out.println("Locating Printed Dress $26.00!");
-		return printedDress1;
-		}
-		catch(NoSuchElementException e)
-		{
-			e.printStackTrace();
-			System.out.println("Error in locating element!");
-			throw e;
-		}
-		catch(Throwable t)
-		{
-			t.printStackTrace();
-			System.out.println("Error with element!");
-			throw t;
-		}
-	}
-	
-	public WebElement getPrintedDress2() throws Throwable
-	{
-		try {
-			System.out.println("Locating Printed Dress $50.99!");
-		return printedDress2;
-		}
-		catch(NoSuchElementException e)
-		{
-			e.printStackTrace();
-			System.out.println("Error in locating element!");
-			throw e;
-		}
-		catch(Throwable t)
-		{
-			t.printStackTrace();
-			System.out.println("Error with element!");
-			throw t;
-		}
-	}
-	
-	public WebElement getSummerDress1() throws Throwable
-	{
-		try {
-			System.out.println("Locating Printed Summer Dress $28.98!");
-		return summerDress1;
-		}
-		catch(NoSuchElementException e)
-		{
-			e.printStackTrace();
-			System.out.println("Error in locating element!");
-			throw e;
-		}
-		catch(Throwable t)
-		{
-			t.printStackTrace();
-			System.out.println("Error with element!");
-			throw t;
-		}
-	}
-	
-	public WebElement getSummerDress2() throws Throwable
-	{
-		try {
-			System.out.println("Printed Summer Dress $30.50!");
-		return summerDress2;
-		}
-		catch(NoSuchElementException e)
-		{
-			e.printStackTrace();
-			System.out.println("Error in locating element!");
-			throw e;
-		}
-		catch(Throwable t)
-		{
-			t.printStackTrace();
-			System.out.println("Error with element!");
-			throw t;
-		}
-	}
-	
 	public WebElement getChiffonDress() throws Throwable
 	{
 		try {
 			System.out.println("Locating Printed Chiffon Dress $16.40!");
+			chiffonDress.getTagName();
 		return chiffonDress;
 		}
 		catch(NoSuchElementException e)
@@ -213,16 +318,17 @@ public class DressPage {
 		}
 	}
 	
-	public WebElement getBlackDress() throws Throwable
+	public boolean validateChiffonDressPresent() throws Throwable
 	{
+		int flag = 0;
 		try {
-			System.out.println("Locating Printed Dress Black $36.00!");
-		return blackDress;
+			System.out.println("Locating Printed Chiffon Dress $16.40!");
+			chiffonDress.getTagName();
 		}
 		catch(NoSuchElementException e)
 		{
-			System.out.println("Success! Element not found!");
-			return null;
+			System.out.println("Failure! Element not found!");
+			flag = 1;
 		}
 		catch(Throwable t)
 		{
@@ -230,18 +336,24 @@ public class DressPage {
 			System.out.println("Error with element!");
 			throw t;
 		}
+		
+		if(flag == 1)
+			return false;
+		else
+			return true;
 	}
 	
-	public WebElement getWhiteDress() throws Throwable
+	public boolean validateBlackDressNotPresent() throws Throwable
 	{
+		int flag = 0;
 		try {
-			System.out.println("Locating Printed Dress White $40.00!");
-		return whiteDress;
+			System.out.println("Locating Printed Dress Black $36.00!");
+			blackDress.getTagName();
 		}
 		catch(NoSuchElementException e)
 		{
 			System.out.println("Success! Element not found!");
-			return null;
+			flag = 1;
 		}
 		catch(Throwable t)
 		{
@@ -249,6 +361,35 @@ public class DressPage {
 			System.out.println("Error with element!");
 			throw t;
 		}
+		
+		if(flag == 1)
+			return true;
+		else
+			return false;
 	}
-
+	
+	public boolean validateWhiteDressNotPresent() throws Throwable
+	{
+		int flag = 0;
+		try {
+			System.out.println("Locating Printed Dress White $40.00!");
+			whiteDress.getTagName();
+		}
+		catch(NoSuchElementException e)
+		{
+			System.out.println("Success! Element not found!");
+			flag = 1;
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error with element!");
+			throw t;
+		}
+		
+		if(flag == 1)
+			return true;
+		else
+			return false;
+	}
 }

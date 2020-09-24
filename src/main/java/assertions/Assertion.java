@@ -47,4 +47,18 @@ public class Assertion {
 			throw t;
 		}
 	}
+	
+	public static void trueAssertion(boolean result)
+	{
+		try {
+		Assert.assertTrue(result);
+		System.out.println("Success! Value is true!");
+		}
+		catch(Exception t)
+		{
+			System.out.println("Error! True assertion failed!");
+			t.printStackTrace();
+			throw t;
+		}
+	}
 }

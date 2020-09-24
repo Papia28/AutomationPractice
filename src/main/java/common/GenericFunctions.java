@@ -1,7 +1,6 @@
 package common;
 
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
 
 import assertions.Assertion;
 
@@ -34,35 +33,5 @@ public class GenericFunctions {
 			System.out.println("Error in validating title!");
 			throw t;
 		}
-	}
-	
-	public static void validateElementPresent(WebElement element) throws Throwable
-	{
-		try {
-			System.out.println("Checking whether element present or not.");
-			Assertion.notNullAssertion(element);
-		}
-		catch(Throwable t)
-		{
-			t.printStackTrace();
-			System.out.println("Error validation failed!");
-			throw t;
-		}
-	}
-	
-	public static void validateElementNotPresent(WebElement element) throws Throwable
-	{
-		try {
-			System.out.println("Checking whether element present or not.");
-			Assertion.nullAssertion(element);
-		}
-		catch(Throwable t)
-		{
-			t.printStackTrace();
-			System.out.println("Error validation failed!");
-			throw t;
-		}
-	}
-	
-	
+	}	
 }

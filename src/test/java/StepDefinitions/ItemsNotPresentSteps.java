@@ -1,7 +1,7 @@
 package StepDefinitions;
 
-import common.GenericFunctions;
-import driverClasses.TestContext;
+import assertions.Assertion;
+import common.TestContext;
 import io.cucumber.java.en.Then;
 import pageObjects.DressPage;
 
@@ -27,10 +27,10 @@ public class ItemsNotPresentSteps
 		try {
 			switch (dressName) {
 			case "Printed Dress Black $36.00":
-				GenericFunctions.validateElementNotPresent(dressObject.getBlackDress());
+				Assertion.trueAssertion(dressObject.validateBlackDressNotPresent());
 				break;
 			case "Printed Dress White $40.00":
-				GenericFunctions.validateElementNotPresent(dressObject.getWhiteDress());
+				Assertion.trueAssertion(dressObject.validateWhiteDressNotPresent());
 				break;
 			}
 			Thread.sleep(500);

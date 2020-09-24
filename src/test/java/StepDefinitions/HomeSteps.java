@@ -3,7 +3,7 @@ package StepDefinitions;
 import org.openqa.selenium.WebDriver;
 
 import common.GenericFunctions;
-import driverClasses.TestContext;
+import common.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
