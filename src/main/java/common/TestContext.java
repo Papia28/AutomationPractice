@@ -4,23 +4,27 @@ import org.openqa.selenium.WebDriver;
 import driverClasses.DriverFactory;
 import pageObjects.PageObjectManager;
 
-public class TestContext {
-	
+public class TestContext 
+{	
 	private DriverFactory driverObject = null;
 	private PageObjectManager pageObjectManager = null;
+	private ScenarioContext scenarioContext = null;
 	private WebDriver driver = null;
 	
 	public TestContext()
 	{
 		try {
-			//get singleton driver object
-			this.driverObject = DriverFactory.getDriverFactoryObject();
+			//get driver object
+			this.driverObject = new DriverFactory();
 			
-			//initialize driver
-			this.driver = driverObject.getDriver();
+			//initialize the scenarioContext
+			this.scenarioContext = new ScenarioContext();
 			
 			//initialize pageobjectmanager class
 			this.pageObjectManager = new PageObjectManager(driverObject.getDriver());
+			
+			//initialize driver
+			this.driver = driverObject.getDriver();
 		}
 		catch(Throwable t)
 		{
@@ -51,6 +55,19 @@ public class TestContext {
 		{
 			t.printStackTrace();
 			System.out.println("Error in getting driver object.");
+			throw t;
+		}
+	}
+	
+	public ScenarioContext getScenarioContext() throws Throwable
+	{
+		try {
+			return scenarioContext;
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error in getting scenario context.");
 			throw t;
 		}
 	}

@@ -15,3 +15,5 @@ Examples:
 |Item|
 |Printed Dress Black $36.00|
 |Printed Dress White $40.00|
+|Printed Dress Black $36.00|
+|Printed Dress White $40.00|

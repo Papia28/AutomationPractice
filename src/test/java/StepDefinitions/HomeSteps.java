@@ -65,7 +65,7 @@ public class HomeSteps {
 	public void afterScenario() throws Throwable
 	{
 		try {
-			context.getDriverFactory().quitSession();
+			context.getDriverFactory().closeSession();
 		}
 		catch(Throwable t)
 		{

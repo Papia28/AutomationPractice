@@ -23,6 +23,7 @@ public class GenericFunctions {
 	public static void validateTitle(WebDriver driver, String expectedTitle) throws Throwable
 	{
 		try {
+			Thread.sleep(200);
 			String actualTitle = driver.getTitle();
 			String trueTitle = ReadProperties.getPropertyNamed(expectedTitle);
 			Assertion.equalAssertion(actualTitle, trueTitle);

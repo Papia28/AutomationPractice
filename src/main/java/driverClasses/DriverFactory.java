@@ -9,9 +9,8 @@ import waits.WaitFunctions;
 public class DriverFactory extends DriverManager 
 {
 	private WebDriver driver = null;
-	private static DriverFactory driverFactoryInstance = null;
 	
-	private DriverFactory()
+	public DriverFactory()
 	{
 		try {
 			setSession();
@@ -26,7 +25,7 @@ public class DriverFactory extends DriverManager
 		return driver;
 	}
 	
-	public void setSession() throws Throwable
+	private void setSession() throws Throwable
 	{
 		try {
 			//get browser name and set driver object accordingly
@@ -53,28 +52,12 @@ public class DriverFactory extends DriverManager
 		}
 	}
 	
-	public static DriverFactory getDriverFactoryObject()
-	{
-		//generate only single instance of driver for a single execution flow
-		try {
-			if (driverFactoryInstance == null)
-				driverFactoryInstance = new DriverFactory();
-			return driverFactoryInstance;
-		}
-		catch(Throwable t)
-		{
-			t.printStackTrace();
-			System.out.println("Error in creating instance of DriverFactory!");
-			throw t;
-		}
-	}
-	
-	public void quitSession() throws Throwable
+	public void closeSession() throws Throwable
 	{
 		//delete driver object once execution ends
 		try {
 			System.out.println("Closing session.");
-			driver.quit();			
+			driver.close();			
 		}
 		catch(Throwable t)
 		{
@@ -85,7 +68,6 @@ public class DriverFactory extends DriverManager
 		finally
 		{
 			driver = null;
-			driverFactoryInstance = null;
 		}
 	}
 
