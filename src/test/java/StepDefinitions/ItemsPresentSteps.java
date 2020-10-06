@@ -1,6 +1,7 @@
 package StepDefinitions;
 
 import assertions.Assertion;
+import common.Context;
 import common.TestContext;
 import io.cucumber.java.en.Then;
 import pageObjects.DressPage;
@@ -8,11 +9,13 @@ import pageObjects.DressPage;
 public class ItemsPresentSteps 
 {
 	private DressPage dressObject = null;
+	private TestContext testContext = null;
 	
 	public ItemsPresentSteps(TestContext context)
 	{
 		try {
-			dressObject = context.getPageObjectManager().getDressPage();
+			testContext = context;
+			dressObject = testContext.pageObjectManager().getDressPage();
 		}
 		catch(Throwable t)
 		{
@@ -60,6 +63,9 @@ public class ItemsPresentSteps
 				Thread.sleep(1000);
 				Assertion.trueAssertion(dressObject.validateChiffonDressPresent());
 				System.out.println("Success! Dress Found!");
+				testContext.scenarioContext().setContext(Context.PRODUCT_NAME, "Printed Chiffon Dress $16.40");
+				String dressName1 = (String) (testContext.scenarioContext().getContext(Context.PRODUCT_NAME));
+				System.out.println("The dress name is : " + dressName1);
 				break;
 			}
 			Thread.sleep(500);
@@ -68,6 +74,21 @@ public class ItemsPresentSteps
 		{
 			t.printStackTrace();
 			System.out.println("Error in validating dresses!");
+			throw t;
+		}
+	}
+	
+	@Then("^user displays the name of the item verified$")
+	public void displayName() throws Throwable
+	{
+		try {
+			String dressName = (String) (testContext.scenarioContext().getContext(Context.PRODUCT_NAME));
+			System.out.println("The dress name is : " + dressName);
+		}
+		catch(Throwable t)
+		{
+			t.printStackTrace();
+			System.out.println("Error in displaying item name!");
 			throw t;
 		}
 	}

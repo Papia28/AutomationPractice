@@ -9,7 +9,8 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions( features = "src\\test\\java\\Features",
 				  glue = "StepDefinitions",
 				  plugin = "pretty",
-				  strict = true )
+				  strict = true,
+				  tags = "@Present or @Display")
 
 @Test
 public class TestRunner extends AbstractTestNGCucumberTests {	

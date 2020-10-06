@@ -19,8 +19,8 @@ public class HomeSteps {
 	{		
 		try {
 			this.context = context;
-			homePage = context.getPageObjectManager().getHomePage();
-			driver = context.getWebDriver();
+			homePage = context.pageObjectManager().getHomePage();
+			driver = context.webDriver();
 			System.out.println("Success! Browser opened!");
 		} 
 		catch (Throwable e) {
@@ -65,7 +65,7 @@ public class HomeSteps {
 	public void afterScenario() throws Throwable
 	{
 		try {
-			context.getDriverFactory().closeSession();
+			context.driverFactory().closeSession();
 		}
 		catch(Throwable t)
 		{

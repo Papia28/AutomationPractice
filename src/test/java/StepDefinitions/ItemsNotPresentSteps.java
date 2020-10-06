@@ -12,7 +12,7 @@ public class ItemsNotPresentSteps
 	public ItemsNotPresentSteps(TestContext context)
 	{
 		try {
-			dressObject = context.getPageObjectManager().getDressPage();
+			dressObject = context.pageObjectManager().getDressPage();
 		}
 		catch(Throwable t)
 		{

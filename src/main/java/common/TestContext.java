@@ -33,7 +33,7 @@ public class TestContext
 		}
 	}
 	
-	public DriverFactory getDriverFactory() throws Throwable
+	public DriverFactory driverFactory() throws Throwable
 	{
 		try {
 			return driverObject;
@@ -46,7 +46,7 @@ public class TestContext
 		}
 	}
 	
-	public PageObjectManager getPageObjectManager() throws Throwable
+	public PageObjectManager pageObjectManager() throws Throwable
 	{
 		try {
 			return pageObjectManager;
@@ -59,7 +59,7 @@ public class TestContext
 		}
 	}
 	
-	public ScenarioContext getScenarioContext() throws Throwable
+	public ScenarioContext scenarioContext() throws Throwable
 	{
 		try {
 			return scenarioContext;
@@ -72,7 +72,7 @@ public class TestContext
 		}
 	}
 	
-	public WebDriver getWebDriver() throws Throwable
+	public WebDriver webDriver() throws Throwable
 	{
 		try {
 			return driver;

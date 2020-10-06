@@ -17,8 +17,8 @@ public class MenuSteps
 	public MenuSteps(TestContext context)
 	{
 		try {
-			homeObject = context.getPageObjectManager().getHomePage();
-			this.driver = context.getWebDriver();
+			homeObject = context.pageObjectManager().getHomePage();
+			this.driver = context.webDriver();
 		}
 		catch(Throwable t)
 		{

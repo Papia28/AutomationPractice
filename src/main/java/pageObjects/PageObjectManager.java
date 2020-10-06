@@ -2,8 +2,8 @@ package pageObjects;
 
 import org.openqa.selenium.WebDriver;
 
-public class PageObjectManager {
-	
+public class PageObjectManager 
+{	
 	private WebDriver driver = null;
 	private HomePage homePage = null;
 	private DressPage dressPage = null;
